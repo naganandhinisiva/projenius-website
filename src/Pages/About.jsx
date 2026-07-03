@@ -8,7 +8,7 @@ import CountUp from "../Components/CountUp";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const MagazineSection = lazy(() => import("../Components/Magazine"));
+
 
 const counterImages = [
   "/images/projenius-banner-1.webp",
@@ -17,6 +17,9 @@ const counterImages = [
   "/images/projenius-banner-4.webp",
   "/images/about-main-image.png",
 ];
+
+
+
 
 const whyImages = [
   "/images/projenius-banner-2.webp",
@@ -48,9 +51,19 @@ const counterStats = [
 ];
 
 export default function About() {
+  const heroRef = useRef(null);
+  const magazineCoverRef = useRef(null);
+  const MagazineSection = lazy(() => import("../Components/Magazine"));
+  const heroTexts = React.useMemo(() => [
+  "Turning ideas into products.",
+  "Turning students into innovators.",
+  "Turning startups into successful businesses."
+], []);
+
+const [currentHeroText, setCurrentHeroText] = useState(heroTexts[0]);
   const [showMagazine, setShowMagazine] = useState(false);
   const [isOpeningMagazine, setIsOpeningMagazine] = useState(false);
-  const magazineCoverRef = useRef(null);
+  
 
     useEffect(() => {
   AOS.init({
@@ -60,6 +73,19 @@ export default function About() {
     offset: 50,
     easing: "ease-out",
   });
+}, []);
+
+
+
+useEffect(() => {
+  let index = 0;
+
+  const interval = setInterval(() => {
+    index = (index + 1) % heroTexts.length;
+    setCurrentHeroText(heroTexts[index]);
+  }, 2000);
+
+  return () => clearInterval(interval);
 }, []);
 
   useEffect(() => {
@@ -138,35 +164,66 @@ export default function About() {
 
   return (
     <>
-      <div className="header-wrap about-hero-wrap" style={{ backgroundImage: 'linear-gradient(120deg, rgba(18, 25, 41, 0.9), rgba(18, 25, 41, 0.58)), url(/images/projenius-banner.webp)' }}>
+      <div 
+      ref={heroRef}
+      className="header-wrap about-hero-wrap" style={{ backgroundImage: 'linear-gradient(120deg, rgba(18, 25, 41, 0.9), rgba(18, 25, 41, 0.58)), url(/images/projenius-banner.webp)' }}>
         <div className="container title-section about-hero-content">
-          <h1 className="page-title">About Us</h1>
-          <p className="about-hero-desc">
-            We build practical digital products, IoT systems, AI solutions, and learning experiences for students, startups, and growing businesses.
-          </p>
-          <div className="about-hero-actions">
-            <a
-              href="https://wa.me/918925450473?text=Hello%20ProJenius%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-              className="about-hero-whatsapp"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span className="about-hero-whatsapp-icon">
-                <i className="bi bi-whatsapp"></i>
-              </span>
-              <span>
-                <strong>Contact on WhatsApp</strong>
-              </span>
-            </a>
-          </div>
-          <div className="about-hero-proof" aria-label="Projenius focus areas">
-            <span>AI & Software</span>
-            <span>IoT Projects</span>
-            <span>Training & Mentorship</span>
-          </div>
+          <h1 className="page-title hero-glow-title">
+    From Vision to Victory
+</h1>
+
+<p className="about-hero-desc typing-text">
+    {currentHeroText}
+</p>
+
+<div className="about-hero-actions">
+
+    <a
+        href="https://wa.me/918925450473?text=Hello%20Projenius"
+        className="hero-btn hero-btn-primary"
+        target="_blank"
+        rel="noreferrer"
+    >
+        Start Your Journey →
+    </a>
+
+    <a
+        href="#about-story"
+        className="hero-btn hero-btn-secondary"
+    >
+        ▶ Watch Our Story
+    </a>
+
+</div>
+
+{/* Floating Glass Feature Cards */}
+<div className="hero-floating-cards">
+
+  <div className="glass-card card-ai">
+    <h4>AI & Software</h4>
+    <p>Smart digital solutions powered by AI and modern web technologies.</p>
+  </div>
+
+  <div className="glass-card card-iot">
+    <h4>IoT Projects</h4>
+    <p>Real-world IoT systems connecting hardware and intelligent software.</p>
+  </div>
+
+  <div className="glass-card card-training">
+    <h4>Training & Mentorship</h4>
+    <p>Hands-on learning programs for students and startups.</p>
+  </div>
+
+</div>
+          
+          
+          
         </div>
       </div>
-      <section className="about-1 py-5">
+      <section
+    className="about-1 py-5"
+    id="about-story"
+>
   <div className="container">
     <div className="row align-items-center">
 

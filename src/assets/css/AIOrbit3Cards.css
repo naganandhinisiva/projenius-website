@@ -44,31 +44,21 @@
   text-align: center;
   font-weight: 600;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
 }
 
 /* Place 3 cards in circle */
 .card1 {
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  transform: rotate(0deg) translate(0, -100px);
 }
 
 .card2 {
-  bottom: 10%;
-  left: 10%;
+  transform: rotate(120deg) translate(0, -100px);
 }
 
 .card3 {
-  bottom: 10%;
-  right: 10%;
-}
-
-/* Rotation animation */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  transform: rotate(240deg) translate(0, -100px);
 }

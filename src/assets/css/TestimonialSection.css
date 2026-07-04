@@ -173,16 +173,14 @@
     position: relative;
     z-index: 3;
 
-    width: 100%;
-    max-width: 620px;
-    height: 600px;
+    width: 90%;
+    max-width: 540px;
+    height: 520px;
 
     object-fit: contain;
 
-    /* MAIN FIX */
-    transform: translateY(-80px);
+    transform: translateY(-30px);
 }
-
 /* QUOTE */
 
 .quote-icon{
@@ -196,7 +194,8 @@
     font-size: 120px;
     background: #121929;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 /* SMALL CIRCLE */

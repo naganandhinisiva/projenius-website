@@ -52,6 +52,7 @@ const counterStats = [
 
 export default function About() {
   const heroRef = useRef(null);
+  const orbitRef = useRef(null);
   const magazineCoverRef = useRef(null);
   const MagazineSection = lazy(() => import("../Components/Magazine"));
   const heroTexts = React.useMemo(() => [
@@ -78,16 +79,61 @@ const [currentHeroText, setCurrentHeroText] = useState(heroTexts[0]);
 
 
 useEffect(() => {
-  let index = 0;
+  const texts = heroTexts;
+  let textIndex = 0;
+  let charIndex = 0;
+  let currentText = "";
+  let timeout;
 
-  const interval = setInterval(() => {
-    index = (index + 1) % heroTexts.length;
-    setCurrentHeroText(heroTexts[index]);
-  }, 2000);
+  const type = () => {
+    const fullText = texts[textIndex];
 
-  return () => clearInterval(interval);
+    currentText = fullText.slice(0, charIndex + 1);
+    setCurrentHeroText(currentText);
+
+    charIndex++;
+
+    if (charIndex < fullText.length) {
+      timeout = setTimeout(type, 80); // typing speed
+    } else {
+      // pause before next sentence
+      timeout = setTimeout(() => {
+        charIndex = 0;
+        textIndex = (textIndex + 1) % texts.length;
+        type();
+      }, 1000);
+    }
+  };
+
+  type();
+
+  return () => clearTimeout(timeout);
 }, []);
+useEffect(() => {
 
+    const orbit = orbitRef.current;
+
+    if (!orbit) return;
+
+    const moveOrbit = (e) => {
+
+        const rect = orbit.getBoundingClientRect();
+
+        const mouseX = (e.clientX - rect.left - rect.width / 2) / rect.width;
+        const mouseY = (e.clientY - rect.top - rect.height / 2) / rect.height;
+
+        orbit.style.setProperty("--mx", mouseX);
+        orbit.style.setProperty("--my", mouseY);
+
+    };
+
+    orbit.addEventListener("mousemove", moveOrbit);
+
+    return () => {
+        orbit.removeEventListener("mousemove", moveOrbit);
+    };
+
+}, []);
   useEffect(() => {
     if (!isOpeningMagazine) return undefined;
 
@@ -168,30 +214,28 @@ useEffect(() => {
       ref={heroRef}
       className="header-wrap about-hero-wrap" style={{ backgroundImage: 'linear-gradient(120deg, rgba(18, 25, 41, 0.9), rgba(18, 25, 41, 0.58)), url(/images/projenius-banner.webp)' }}>
         <div className="container title-section about-hero-content">
-          <h1 className="page-title hero-glow-title">
+          <h4 className="page-title hero-glow-title">
     From Vision to Victory
-</h1>
+</h4>
 
 <p className="about-hero-desc typing-text">
     {currentHeroText}
 </p>
 
-<div className="about-hero-actions">
+<div className="about-hero-actions hero-btn-row">
+
+    <a
+        href="#about-story"
+        className="hero-btn hero-btn-primary"
+    >
+        ▶ Watch Our Story
+    </a>
 
     <a
         href="https://wa.me/918925450473?text=Hello%20Projenius"
         className="hero-btn hero-btn-primary"
-        target="_blank"
-        rel="noreferrer"
     >
         Start Your Journey →
-    </a>
-
-    <a
-        href="#about-story"
-        className="hero-btn hero-btn-secondary"
-    >
-        ▶ Watch Our Story
     </a>
 
 </div>
@@ -230,33 +274,74 @@ useEffect(() => {
       {/* Left Circle Design */}
       <div className="col-lg-6 col-md-12" data-aos="fade-right" data-aos-delay="100">
         <div className="wrapper">
-          <div className="about-principles" aria-label="Projenius vision mission and values">
-            <div className="principle-orbit" aria-hidden="true"></div>
+           <div
+    className="ai-orbit-container"
+    ref={orbitRef}
+>
+<div className="noise-layer"></div>
+<div className="ai-background-glow"></div>
+  <div className="orbit orbit-one"></div>
+<div className="orbit orbit-two"></div>
 
-            <article className="principle-card principle-vision">
-              <div className="principle-icon">
-                <i className="bi bi-eye"></i>
-              </div>
-              <span>Vision</span>
-              <p>Shape practical technology ideas into future-ready digital products.</p>
-            </article>
+<div className="orbit-dot orbit-dot1"></div>
+<div className="orbit-dot orbit-dot2"></div>
+<div className="orbit-dot orbit-dot3"></div>
+<div className="orbit-dot orbit-dot4"></div>
+  <div className="ai-core glow-core">
+    <i className="bi bi-cpu-fill"></i>
+    <span>AI</span>
+  </div>
 
-            <article className="principle-card principle-mission">
-              <div className="principle-icon">
-                <i className="bi bi-rocket-takeoff"></i>
-              </div>
-              <span>Mission</span>
-              <p>Build, mentor, and deliver solutions that create measurable real-world impact.</p>
-            </article>
+  <div className="orbit-icon cloud">
+    <i className="bi bi-cloud-fill"></i>
+  </div>
 
-            <article className="principle-card principle-values">
-              <div className="principle-icon">
-                <i className="bi bi-gem"></i>
-              </div>
-              <span>Values</span>
-              <p>Innovation, clarity, collaboration, and responsible engineering.</p>
-            </article>
-          </div>
+  <div className="orbit-icon iot">
+    <i className="bi bi-router-fill"></i>
+  </div>
+
+  <div className="orbit-icon code">
+    <i className="bi bi-code-slash"></i>
+  </div>
+
+  <div className="orbit-icon mobile">
+    <i className="bi bi-phone-fill"></i>
+  </div>
+
+  <div className="orbit-icon innovation">
+    <i className="bi bi-lightbulb-fill"></i>
+  </div>
+
+  <div className="orbit-icon automation">
+    <i className="bi bi-gear-fill"></i>
+  </div>
+
+ 
+
+  <span className="particle p1"></span>
+  <span className="particle p2"></span>
+  <span className="particle p3"></span>
+  <span className="particle p4"></span>
+  <div className="orbit-stars">
+
+    {Array.from({ length: 40 }).map((_, i) => (
+
+        <span
+            key={i}
+            className="star"
+            style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 8}s`,
+animationDuration: `${6 + Math.random() * 5}s`
+            }}
+        />
+
+    ))}
+
+</div>
+
+</div>
         </div>
       </div>
 
@@ -329,10 +414,10 @@ useEffect(() => {
       </div>
 
     </div>
-  </div>
+  </div>  
 </section>
       <section
-        className="about-2 container"
+        className="about-2"
         style={{
           backgroundImage: `linear-gradient(#12192940), url(${counterImages[0]})`,
         }}
@@ -358,7 +443,8 @@ useEffect(() => {
         </div>
       </section>
       <TeamSection />
-      <section className="about-3 container py-5">
+      <section className="about-3 container-fluid py-5">
+    <div className="container-xxl"></div>
         <div className="row">
           <div className="col-lg-6 col-12">
             <span id="sub-heading">Why Choose us?</span>

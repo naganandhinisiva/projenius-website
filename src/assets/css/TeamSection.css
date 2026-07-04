@@ -67,21 +67,30 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.09);
     overflow: hidden; /* everything clipped inside */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 260px;
+    min-height: 320px;
     border-left: 4px solid #66c7dd;
 }
 
-.team-card:hover {
-    transform: translateY(-8px);
+.team-card:hover{
+    transform: translateY(-10px) scale(1.02);
+
+    background: linear-gradient(
+    135deg,
+    #EAFBFF 0%,
+    #CFF5FF 35%,
+    #8FE8FF 70%,
+    #49CBE4 100%
+);
+
     box-shadow:
-        0 20px 50px rgba(102, 199, 221, 0.35),
-        0 0 0 2px rgba(102, 199, 221, 0.3);
+        0 25px 60px rgba(37,99,235,.35),
+        0 0 35px rgba(73,203,228,.35);
 }
 
 /* ── Text panel (left) ──────────────────────────────── */
 .team-card-body {
     flex: 1;
-    padding: 28px 20px 28px 28px;
+    padding: 36px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -115,11 +124,15 @@
 /* ── Photo panel (right) ────────────────────────────── */
 .team-card-photo {
     position: relative;
-    width: 220px;
-    min-width: 220px;
+    width: 250px;
+    min-width: 250px;
     flex-shrink: 0;
     overflow: hidden;
 }
+.team-card:hover::before{
+    opacity: 1;
+}
+
 
 /* Diagonal background — visible in top-right corner */
 .team-card-photo::before {
@@ -203,7 +216,7 @@
 /* Third card */
 .team-grid-bottom .team-card {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
 }
 
 /* ── Responsive ──────────────────────────────────────── */
@@ -317,4 +330,83 @@
         transform: none;
         transition: none;
     }
+}
+
+.team-card:hover .team-member-name{
+    color:#0F172A;
+}
+
+.team-card:hover .team-member-role{
+    color:#2563EB;
+}
+
+.team-card:hover .team-member-bio{
+    color:#374151;
+}
+
+.team-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        110deg,
+        transparent 0%,
+        rgba(255,255,255,.65) 50%,
+        transparent 100%
+    );
+
+    transform:skewX(-25deg);
+
+    transition:none;
+
+    pointer-events:none;
+}
+
+.team-card:hover::after{
+
+    animation:shineCard 1s ease;
+}
+
+@keyframes shineCard{
+
+    from{
+        left:-120%;
+    }
+
+    to{
+        left:170%;
+    }
+
+}
+
+.team-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        #F8FDFF 0%,
+        #DDF7FF 30%,
+        #A9EEFF 70%,
+        #66C7DD 100%
+    );
+
+    opacity:0;
+
+    transition:.45s ease;
+
+    z-index:0;
 }

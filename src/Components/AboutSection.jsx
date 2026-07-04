@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Bot, Boxes, Code2, Rocket } from "lucide-react";
 import '../index.css';
 import '../assets/css/AboutSection.css';
 import CountUp from "./CountUp";
 
 export default function AboutSection() {
-
+const [activeCard, setActiveCard] = useState(null);
     useEffect(() => {
         const elements = document.querySelectorAll(".reveal");
 
@@ -36,18 +36,30 @@ export default function AboutSection() {
 
                             <div className="about-left-top custom-image-layout">
 
-                                <div className="about-left-main-img">
+                                <div
+    className={`about-left-main-img ${activeCard === "main" ? "active-card" : ""}`}
+    onMouseEnter={() => setActiveCard("main")}
+    onMouseLeave={() => setActiveCard(null)}
+>
                                     <img src="/images/about-main-image.png" alt="" />
                                 </div>
 
-                                <div className="about-left-secondary-img">
+                                <div
+    className={`about-left-secondary-img ${activeCard === "second" ? "active-card" : ""}`}
+    onMouseEnter={() => setActiveCard("second")}
+    onMouseLeave={() => setActiveCard(null)}
+>
                                     <img src="/images/software-developement-training.png" alt="Software development training session"  className="second-img"/>
                                 </div>
 
                             </div>
 
                             {/* CENTER BOX */}
-                            <div className="about-left-bottom">
+                            <div
+    className={`about-left-bottom ${activeCard === "third" ? "active-card" : ""}`}
+    onMouseEnter={() => setActiveCard("third")}
+    onMouseLeave={() => setActiveCard(null)}
+>
                                 <div className="about-left-bottom-inner about-item--flexnw">
 
                                     <div className="about-third--image">

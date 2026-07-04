@@ -358,6 +358,7 @@
     align-items: center;
     gap: 25px;
     flex-wrap: wrap;
+    margin-right: 180px;   /* Moves the links towards the left */
 }
 
 .footer-bottom-links a {

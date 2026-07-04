@@ -2226,3 +2226,39 @@ opacity:1;
     }
 
 }
+
+.icon-box .icon{
+    width:95px;
+    height:95px;
+    background:#76d8f5;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    animation: floatingRotate 4s ease-in-out infinite;
+}
+
+@keyframes floatingRotate{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    25%{
+        transform:translateY(-8px) rotate(90deg);
+    }
+
+    50%{
+        transform:translateY(0) rotate(180deg);
+    }
+
+    75%{
+        transform:translateY(8px) rotate(270deg);
+    }
+
+    100%{
+        transform:translateY(0) rotate(360deg);
+    }
+}
+

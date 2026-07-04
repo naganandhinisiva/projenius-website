@@ -52,7 +52,7 @@ const counterStats = [
 
 export default function About() {
   const heroRef = useRef(null);
-  const orbitRef = useRef(null);
+  
   const magazineCoverRef = useRef(null);
   const MagazineSection = lazy(() => import("../Components/Magazine"));
   const heroTexts = React.useMemo(() => [
@@ -109,31 +109,7 @@ useEffect(() => {
 
   return () => clearTimeout(timeout);
 }, []);
-useEffect(() => {
 
-    const orbit = orbitRef.current;
-
-    if (!orbit) return;
-
-    const moveOrbit = (e) => {
-
-        const rect = orbit.getBoundingClientRect();
-
-        const mouseX = (e.clientX - rect.left - rect.width / 2) / rect.width;
-        const mouseY = (e.clientY - rect.top - rect.height / 2) / rect.height;
-
-        orbit.style.setProperty("--mx", mouseX);
-        orbit.style.setProperty("--my", mouseY);
-
-    };
-
-    orbit.addEventListener("mousemove", moveOrbit);
-
-    return () => {
-        orbit.removeEventListener("mousemove", moveOrbit);
-    };
-
-}, []);
   useEffect(() => {
     if (!isOpeningMagazine) return undefined;
 
@@ -240,25 +216,7 @@ useEffect(() => {
 
 </div>
 
-{/* Floating Glass Feature Cards */}
-<div className="hero-floating-cards">
 
-  <div className="glass-card card-ai">
-    <h4>AI & Software</h4>
-    <p>Smart digital solutions powered by AI and modern web technologies.</p>
-  </div>
-
-  <div className="glass-card card-iot">
-    <h4>IoT Projects</h4>
-    <p>Real-world IoT systems connecting hardware and intelligent software.</p>
-  </div>
-
-  <div className="glass-card card-training">
-    <h4>Training & Mentorship</h4>
-    <p>Hands-on learning programs for students and startups.</p>
-  </div>
-
-</div>
           
           
           
@@ -269,82 +227,9 @@ useEffect(() => {
     id="about-story"
 >
   <div className="container">
-    <div className="row align-items-center">
-
-      {/* Left Circle Design */}
-      <div className="col-lg-6 col-md-12" data-aos="fade-right" data-aos-delay="100">
-        <div className="wrapper">
-           <div
-    className="ai-orbit-container"
-    ref={orbitRef}
->
-<div className="noise-layer"></div>
-<div className="ai-background-glow"></div>
-  <div className="orbit orbit-one"></div>
-<div className="orbit orbit-two"></div>
-
-<div className="orbit-dot orbit-dot1"></div>
-<div className="orbit-dot orbit-dot2"></div>
-<div className="orbit-dot orbit-dot3"></div>
-<div className="orbit-dot orbit-dot4"></div>
-  <div className="ai-core glow-core">
-    <i className="bi bi-cpu-fill"></i>
-    <span>AI</span>
-  </div>
-
-  <div className="orbit-icon cloud">
-    <i className="bi bi-cloud-fill"></i>
-  </div>
-
-  <div className="orbit-icon iot">
-    <i className="bi bi-router-fill"></i>
-  </div>
-
-  <div className="orbit-icon code">
-    <i className="bi bi-code-slash"></i>
-  </div>
-
-  <div className="orbit-icon mobile">
-    <i className="bi bi-phone-fill"></i>
-  </div>
-
-  <div className="orbit-icon innovation">
-    <i className="bi bi-lightbulb-fill"></i>
-  </div>
-
-  <div className="orbit-icon automation">
-    <i className="bi bi-gear-fill"></i>
-  </div>
-
- 
-
-  <span className="particle p1"></span>
-  <span className="particle p2"></span>
-  <span className="particle p3"></span>
-  <span className="particle p4"></span>
-  <div className="orbit-stars">
-
-    {Array.from({ length: 40 }).map((_, i) => (
-
-        <span
-            key={i}
-            className="star"
-            style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 8}s`,
-animationDuration: `${6 + Math.random() * 5}s`
-            }}
-        />
-
-    ))}
-
-</div>
-
-</div>
-        </div>
-      </div>
-
+    <div className="row">
+ <div className="col-lg-6 d-none d-lg-block"></div>
+      
       {/* Right Content */}
       <div className="col-lg-6 col-md-12" data-aos="fade-left" data-aos-delay="150">
 
@@ -687,3 +572,4 @@ animationDuration: `${6 + Math.random() * 5}s`
 
   );
 }
+

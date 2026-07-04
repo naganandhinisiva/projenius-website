@@ -21,14 +21,17 @@ const tabsData = [
       "Smart AI-powered systems for automation and business growth.",
   },  
   {
+   /* 
     title: "EduTech Platform",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     description:
-      "Modern responsive websites with premium UI and smooth performance.",
+     "Modern responsive websites with premium UI and smooth performance.",
+     */
   },
   
 ];
+  
 
 const ProductSection = () => {
   const [activeTab, setActiveTab] = useState(0);

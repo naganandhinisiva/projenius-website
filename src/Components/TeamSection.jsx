@@ -13,7 +13,7 @@ const teamMembers = [
     position: "Founder & CEO",
     bio: "A passionate leader focused on empowering the next generation of innovators with a strong vision for academic and practical excellence.",
     accent: "lead",
-    socials: ["facebook", "twitter-x", "linkedin", "instagram"],
+    socials: ["email", "whatsapp", "youtube", "instagram"],
   },
   {
     image: "images/team-member-2.webp",
@@ -21,7 +21,7 @@ const teamMembers = [
     position: "CTO & Co-Founder",
     bio: "A visionary mentor promoting entrepreneurship and innovation, supporting students from exploration to impactful execution.",
     accent: "core",
-    socials: ["facebook", "twitter-x", "linkedin", "instagram"],
+    socials: ["email", "whatsapp", "youtube", "instagram"],
   },
   {
     image: "images/team-member-3.webp",
@@ -29,7 +29,7 @@ const teamMembers = [
     position: "COO & Co-Founder",
     bio: "A visionary mentor promoting entrepreneurship and innovation, supporting students from exploration to impactful execution.",
     accent: "placeholder",
-    socials: ["facebook", "twitter-x", "linkedin", "instagram"],
+    socials: ["email", "whatsapp", "youtube", "instagram"],
   },
 ];
 

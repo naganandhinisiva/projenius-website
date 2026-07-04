@@ -50,20 +50,48 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
   background: #ffffff;
   border-radius: 30px;
   padding: 40px;
   box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
+  transition: all 0.5s ease;
+}
+
+.tabs-content:hover {
+  transform: translateY(-8px);
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 191, 255, 0.04) 0%,
+    rgba(82, 214, 255, 0.08) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+
+  box-shadow:
+    0 20px 50px rgba(0, 191, 255, 0.18),
+    0 10px 25px rgba(82, 214, 255, 0.12);
+}
+
+.tabs-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+
+.tabs-content:hover .tabs-image img {
+  transform: scale(1.05);
 }
 
 .tabs-image img {
   width: 100%;
-  height: 450px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  display: block;
   border-radius: 25px;
+  transition: transform 0.5s ease;
 }
-
 .tabs-text h2 {
   color: #0f172a;
   font-size: 42px;
@@ -98,6 +126,7 @@
 @media (max-width: 991px) {
   .tabs-content {
     grid-template-columns: 1fr;
+    gap: 30px;
     padding: 30px;
   }
 
@@ -107,21 +136,30 @@
 }
 
 @media (max-width: 767px) {
+
   .tabs-section {
-    padding: 60px 15px;
+    padding: 50px 15px;
   }
 
   .tabs-content {
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 25px;
     padding: 20px;
   }
 
   .tabs-image img {
-    height: 300px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
   }
 
   .tabs-text h2 {
     font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .tabs-text p {
+    font-size: 15px;
+    line-height: 1.7;
   }
 
   .tab-btn {

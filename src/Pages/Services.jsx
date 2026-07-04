@@ -108,7 +108,7 @@ export default function Services() {
 
       <section className="header-wrap" style={{backgroundImage:'linear-gradient(#1219297d), url(/images/projenius-banner.webp)'}}>
         <div className="container title-section">
-          <h1 className="page-title">Development Services</h1>
+          <h1 className="page-title"> Software Solutions</h1>
         </div>
       </section>
 
@@ -120,7 +120,7 @@ export default function Services() {
         <div className="hero-content">
 
           <span className="hero-tag">
-            DEVELOPMENT SERVICES
+            DIGITAL PRODUCT DEVELOPMENT
           </span>
 
           <h1>

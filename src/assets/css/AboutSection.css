@@ -13,21 +13,19 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    min-height: auto;
+    min-height: 620px;
 }
 
 .about-v2 .about-left-main-img {
-    width: 48%;
-    max-width: 300px;
+    width: 72%;
     z-index: 1;
-    margin: 0 auto;
 }
 
 .about-v2 .about-left-secondary-img {
     position: absolute;
     right: -10px;
     bottom: -8px;
-    width: 45%;
+    width: 54%;
     z-index: 2;
 }
 
@@ -130,8 +128,15 @@
 }
 
 .about-v2 .list:hover {
-    transform: translateX(6px);
-    box-shadow: 0 22px 42px rgba(15, 23, 42, 0.12);
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 0 18px rgba(71,195,255,0.30),
+        0 0 35px rgba(71,195,255,0.20),
+        0 22px 42px rgba(15,23,42,0.15);
+
+    border-color: rgba(71,195,255,0.45);
 }
 
 .about-v2 .about-feature-icon {
@@ -180,12 +185,18 @@
 
 .about-v2 .about-left-main-img img,
 .about-v2 .about-left-secondary-img img {
-    transition: transform 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .about-v2 .about-left-main-img img:hover,
 .about-v2 .about-left-secondary-img img:hover {
-    transform: scale(1.05);
+
+    transform: scale(1.04);
+
+    box-shadow:
+        0 0 20px rgba(71, 195, 255, 0.35),
+        0 0 40px rgba(71, 195, 255, 0.25),
+        0 25px 60px rgba(15, 23, 42, 0.18);
 }
 
 @keyframes aboutFloat {
@@ -290,11 +301,7 @@
     .about-v2 .about-left-secondary-img {
         width: 56%;
     }
-
-    .about-v2 .about-left-bottom-inner {
-        padding: 14px 18px;
-    }
-
+  
     .about-v2 .about-counter--bnumber {
         font-size: 30px;
     }
@@ -303,7 +310,17 @@
         gap: 18px;
     }
 }
+.about-v2 .about-left-bottom-inner {
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
 
+.about-v2 .about-left-bottom-inner:hover {
+    box-shadow:
+        0 0 20px rgba(71, 195, 255, 0.7),
+        0 0 40px rgba(71, 195, 255, 0.5),
+        0 0 70px rgba(71, 195, 255, 0.3);
+}
 /* ===============================
    TABLET
 ================================= */
@@ -522,4 +539,12 @@
         bottom: -30px;
         left: 26px;
     }
+}
+
+.about-v2 .about-left-main-img img,
+.about-v2 .about-left-secondary-img img,
+.about-v2 .about-left-bottom-inner,
+.about-v2 .list {
+
+    will-change: transform;
 }

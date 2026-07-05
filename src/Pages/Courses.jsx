@@ -476,17 +476,26 @@ export default function Courses() {
     <SwiperSlide key={idx}>
 
       <div
-        className="card border-0 shadow-sm overflow-hidden bg-white"
-        style={{
-          borderRadius: "16px",
-          minHeight: "80vh",
-        }}
-      >
+  className="card border-0 shadow-sm overflow-hidden bg-white"
+  style={{
+    borderRadius: "16px",
+    height: "85vh",
+    width: "100%",
+  }}
+>
 
-        <div className="row g-0 h-100">
+        <div
+  className="row g-0 h-100 flex-nowrap"
+  style={{ flexWrap: "nowrap" }}
+>
 
-          <div
+         <div
   className="col-lg-6 position-relative overflow-hidden carousel-image"
+  style={{
+    height: "85vh",
+    flex: "0 0 50%",
+    maxWidth: "50%"
+  }}
 >
             <img
               src={t.projectImage}
@@ -500,7 +509,14 @@ export default function Courses() {
             <div className="carousel-overlay swiper-overlay"></div>
           </div>
 
-          <div className="col-lg-6 p-5 d-flex flex-column justify-content-center">
+          <div
+  className="col-lg-6 p-5 d-flex flex-column justify-content-center"
+  style={{
+    height: "85vh",
+    flex: "0 0 50%",
+    maxWidth: "50%"
+  }}
+>
 
             <div className="d-flex mb-3">
               <i className="bi bi-star-fill text-warning me-1"></i>
@@ -604,3 +620,4 @@ export default function Courses() {
     </>
   );
 }
+

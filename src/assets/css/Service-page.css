@@ -280,11 +280,11 @@
 }
 
 .workshop-showcase-section {
-  background: #121929;
+  background: #ffffff;
 }
 
 .workshop-showcase-section #title {
-  color: #ffffff;
+  color: #121929;
 }
 
 .workshop-showcase-section #sub-heading {
@@ -421,10 +421,10 @@
 }
 
 .workshop-event-card {
-  background: #ffffff;
-  border: 1px solid #e4eaf3;
+  background: #121929;
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(18, 25, 41, 0.08);
+  box-shadow: 0 20px 50px rgba(18, 25, 41, 0.18);
   display: grid;
   grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
   overflow: hidden;
@@ -478,14 +478,14 @@
 }
 
 .workshop-event-content h3 {
-  color: #07142f;
+  color:  #ffffff;
   font-size: 34px;
   font-weight: 800;
   margin-bottom: 16px;
 }
 
 .workshop-event-content h4 {
-  color: #121929;
+  color: #ffffff;
   font-size: 24px;
   font-weight: 800;
   line-height: 1.35;
@@ -493,7 +493,7 @@
 }
 
 .workshop-event-content p {
-  color: #5c6574;
+  color: rgba(255,255,255,0.82);
   font-size: 16px;
   line-height: 1.85;
   margin-bottom: 22px;
@@ -507,19 +507,19 @@
 }
 
 .workshop-badges span {
-  background: #eef7ff;
+  background: rgba(56,189,248,0.15);
   border: 1px solid #d8ecff;
   border-radius: 999px;
-  color: #121929;
+  color: #66c7dd;
   font-size: 13px;
   font-weight: 700;
   padding: 8px 13px;
 }
 
 .workshop-details span {
-  background: #f6f8fb;
+  background: rgba(255,255,255,0.08);
   border-radius: 10px;
-  color: #4e5969;
+  color:  #ffffff;
   font-size: 14px;
   font-weight: 700;
   padding: 10px 14px;

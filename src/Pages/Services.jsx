@@ -5,7 +5,7 @@ import "../index.css";
 import "../assets/css/Service-page.css";
 import FooterTopSection from "../Components/FooterTopSection";
 import PriceTableSection from "../Components/PriceTableSection";
-
+import ProjectSection from "../Components/ProjectSection";
 export default function Services() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.12 });
@@ -234,10 +234,17 @@ export default function Services() {
 
       
     
-      <div>
-      <Reveal width="100%" delay={0.23}><PriceTableSection /></Reveal>
-      <Reveal width="100%" delay={0.29}><FooterTopSection /></Reveal>
-      </div>
+      <ProjectSection />
+
+<div>
+  <Reveal width="100%" delay={0.23}>
+    <PriceTableSection />
+  </Reveal>
+
+  <Reveal width="100%" delay={0.29}>
+    <FooterTopSection />
+  </Reveal>
+</div>
     </>
   );
 }

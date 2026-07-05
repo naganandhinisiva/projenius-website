@@ -234,11 +234,33 @@ export default function CareerGuidance() {
 
   // Toggle functions removed as we are using inline toggle for grid
 
-  const handleBookingClick = (e) => {
-    e.preventDefault();
-    const text = encodeURIComponent(`Hello ProJenius, I am interested in the career call. I would like to book a session on ${selectedDate}th at ${selectedTime}.`);
-    window.open(`https://wa.me/919025476322?text=${text}`, "_blank");
-  };
+ const handleBookingClick = (e) => {
+  e.preventDefault();
+
+  const selected = availableDates.find(
+    (d) => d.dateNum === selectedDate
+  );
+
+  const day = selected ? selected.dayName : "";
+  const date = selected ? selected.dateObj.toLocaleDateString("en-GB") : "";
+
+  const message = `
+Hello ProJenius,
+
+I would like to book a Career Guidance session.
+
+📅 Date: ${date}
+📆 Day: ${day}
+⏰ Time: ${selectedTime}
+
+Please confirm my booking.
+`;
+
+  window.open(
+    `https://wa.me/918925450473?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+};
 
   return (
     <>

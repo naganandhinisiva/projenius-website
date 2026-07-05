@@ -86,21 +86,21 @@
 
 /* LEFT FORM CARD */
 .quote-form-card {
-    background: #fff;
+    background: #06142d;
     border-radius: 24px;
     padding: 40px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
 }
 
 .quote-form-card h3 {
     font-size: 26px;
     font-weight: 700;
-    color: #06142d;
+    color: #ffffff;
     margin-bottom: 8px;
 }
 
 .quote-form-subtitle {
-    color: #5b6475;
+    color: rgba(255,255,255,0.75);
     font-size: 15px;
     margin-bottom: 25px;
 }
@@ -108,7 +108,7 @@
 .quote-label {
     font-size: 14px;
     font-weight: 600;
-    color: #374151;
+    color: #ffffff;
     margin-bottom: 8px;
 }
 
@@ -146,24 +146,24 @@
 
 /* RIGHT SIDE CARDS */
 .talk-first-card {
-    background: #4f46e5; /* The image uses a purple-blue, let's use a nice gradient or solid matching site theme */
-    background: linear-gradient(135deg, #06142d 0%, #1a365d 100%);
+    background: #eaf7ff;
     border-radius: 24px;
     padding: 35px;
-    color: #fff;
-    box-shadow: 0 10px 30px rgba(6, 20, 45, 0.15);
+    color: #06142d;
+    box-shadow: 0 10px 30px rgba(6,20,45,0.08);
 }
 
 .talk-first-card h4 {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 12px;
+    color: #06142d;
 }
 
 .talk-first-card p {
     font-size: 15px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.85);
+    color: #5b6475;
 }
 
 .talk-contact-item {
@@ -179,9 +179,10 @@
     color: #22d3ee;
 }
 
+
 .talk-response-time {
     font-size: 14px !important;
-    color: rgba(255, 255, 255, 0.6) !important;
+    color: #6b7280 !important;
 }
 
 .what-happens-card {

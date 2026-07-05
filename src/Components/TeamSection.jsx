@@ -13,7 +13,7 @@ const teamMembers = [
     position: "Founder & CEO",
     bio: "A passionate leader focused on empowering the next generation of innovators with a strong vision for academic and practical excellence.",
     accent: "lead",
-    socials: ["email", "whatsapp", "youtube", "instagram"],
+    socials: ["envelope-fill", "whatsapp", "youtube", "instagram"],
   },
   {
     image: "images/team-member-2.webp",
@@ -21,7 +21,7 @@ const teamMembers = [
     position: "CTO & Co-Founder",
     bio: "A visionary mentor promoting entrepreneurship and innovation, supporting students from exploration to impactful execution.",
     accent: "core",
-    socials: ["email", "whatsapp", "youtube", "instagram"],
+    socials: ["envelope-fill", "whatsapp", "youtube", "instagram"],
   },
   {
     image: "images/team-member-3.webp",
@@ -29,10 +29,15 @@ const teamMembers = [
     position: "COO & Co-Founder",
     bio: "A visionary mentor promoting entrepreneurship and innovation, supporting students from exploration to impactful execution.",
     accent: "placeholder",
-    socials: ["email", "whatsapp", "youtube", "instagram"],
+    socials: ["envelope-fill", "whatsapp", "youtube", "instagram"],
   },
 ];
-
+const socialLinks = {
+  "envelope-fill": "mailto:teamprojenius@gmail.com",
+  whatsapp: "https://wa.me/918925450473",
+  youtube: "https://youtube.com/@projenius-8?si=ukvcjNz6hkXbeW5R",
+  instagram: "https://www.instagram.com/projenius_?igsh=MWhyNjQxbGR4ZWNpYg==",
+};
 export default function TeamSection() {
   const sectionRef = useRef(null);
   const [animateName, setAnimateName] = useState(false);
@@ -104,11 +109,12 @@ export default function TeamSection() {
         <div className="team-grid-top">
           {teamMembers.slice(0, 2).map((member, index) => (
             <article
-              className="team-card"
-              key={member.name}
-              data-aos="fade-up"
-              data-aos-delay={200 + index * 150}
-            >
+  className="team-card"
+  key={member.name}
+  data-aos="fade-up"
+  data-aos-delay={200 + index * 150}
+  onContextMenu={(e) => e.preventDefault()}
+>
               {/* Text — left */}
               <div className="team-card-body">
                 <h3 className={`team-member-name ${animateName ? "team-name-in" : ""}`}>{member.name}</h3>
@@ -118,12 +124,23 @@ export default function TeamSection() {
 
               {/* Photo — right, image overflows above card */}
               <div className="team-card-photo">
-                <img className={animateImage ? "team-image-in" : ""} src={member.image} alt={member.name} />
+                <img
+  className={animateImage ? "team-image-in" : ""}
+  src={member.image}
+  alt={member.name}
+  onContextMenu={(e) => e.preventDefault()}
+/>
                 <div className="team-card-socials">
                   {member.socials.map((platform) => (
-                    <a href="#" key={platform} aria-label={`${member.name} ${platform}`}>
-                      <i className={`bi bi-${platform}`}></i>
-                    </a>
+                    <a
+  href={socialLinks[platform]}
+  key={platform}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`${member.name} ${platform}`}
+>
+  <i className={`bi bi-${platform}`}></i>
+</a>
                   ))}
                 </div>
               </div>
@@ -134,10 +151,11 @@ export default function TeamSection() {
         {/* ── Third card centered below ── */}
         <div className="team-grid-bottom">
           <article
-            className="team-card"
-            data-aos="fade-up"
-            data-aos-delay="500"
-          >
+  className="team-card"
+  data-aos="fade-up"
+  data-aos-delay="500"
+  onContextMenu={(e) => e.preventDefault()}
+>
             <div className="team-card-body">
               <h3 className={`team-member-name ${animateName ? "team-name-in" : ""}`}>{teamMembers[2].name}</h3>
               <p className={`team-member-role ${animateName ? "team-role-in" : ""}`}>{teamMembers[2].position}</p>
@@ -149,12 +167,24 @@ export default function TeamSection() {
             </div>
 
             <div className="team-card-photo">
-              <img className={animateImage ? "team-image-in" : ""} src={teamMembers[2].image} alt={teamMembers[2].name} />
+              <img
+  className={animateImage ? "team-image-in" : ""}
+  src={teamMembers[2].image}
+  alt={teamMembers[2].name}
+  onContextMenu={(e) => e.preventDefault()}
+  draggable="false"
+/>
               <div className="team-card-socials">
                 {teamMembers[2].socials.map((platform) => (
-                  <a href="#" key={platform} aria-label={`Brian ${platform}`}>
-                    <i className={`bi bi-${platform}`}></i>
-                  </a>
+                  <a
+  href={socialLinks[platform]}
+  key={platform}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`Brian ${platform}`}
+>
+  <i className={`bi bi-${platform}`}></i>
+</a>
                 ))}
               </div>
             </div>

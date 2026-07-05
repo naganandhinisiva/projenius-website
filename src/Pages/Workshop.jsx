@@ -234,25 +234,38 @@ export default function Workshop() {
           </div>
 
           <div className="workshop-awards-masonry">
-            {achievements.map((item, index) => (
-              <article
-                className="workshop-award-item"
-                key={item.title}
-                data-aos={
-                  ["fade-right", "fade-down", "fade-left", "zoom-in", "flip-left", "fade-up-left"][
-                    index % 6
-                  ]
-                }
-                data-aos-delay={50 + index * 50}
-              >
-                <img src={item.image} alt={item.alt} loading="lazy" decoding="async" />
-                <div className="workshop-award-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.subtitle}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+  {achievements.map((item, index) => (
+    <article
+      className="workshop-award-item"
+      key={item.title}
+      data-aos={
+        [
+          "fade-right",
+          "fade-down",
+          "fade-left",
+          "zoom-in",
+          "flip-left",
+          "fade-up-left",
+        ][index % 6]
+      }
+      data-aos-delay={50 + index * 50}
+    >
+      <img
+        src={item.image}
+        alt={item.alt}
+        loading="lazy"
+        decoding="async"
+      />
+
+      <div className="workshop-award-content">
+        <h3>{item.title}</h3>
+        <p>{item.subtitle}</p>
+      </div>
+    </article>
+  ))}
+</div>
+
+
         </div>
       </section>
     </>

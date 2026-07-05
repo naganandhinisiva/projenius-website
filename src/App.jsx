@@ -75,7 +75,17 @@ const POPUP_CONFIGS = {
 export default function App() {
   const location = useLocation();
   const [activePopup, setActivePopup] = useState(null);
+useEffect(() => {
+  const disableRightClick = (e) => {
+    e.preventDefault();
+  };
 
+  document.addEventListener("contextmenu", disableRightClick);
+
+  return () => {
+    document.removeEventListener("contextmenu", disableRightClick);
+  };
+}, []);
   // Initialize Lenis Smooth Scroll
   useEffect(() => {
     const lenis = new Lenis({

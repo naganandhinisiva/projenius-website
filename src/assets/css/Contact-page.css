@@ -392,3 +392,45 @@
     }
 
 }
+
+/* ============================
+   DARK BLUE CAROUSEL OVERLAY
+============================ */
+
+.carousel-image{
+    position:relative;
+    overflow:hidden;
+}
+
+.swiper-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(18,25,41,0);
+    z-index:2;
+    animation: darkOverlay 5s ease-in-out infinite;
+    pointer-events:none;
+}
+
+@keyframes darkOverlay{
+
+    0%{
+        background:rgba(18,25,41,0);
+    }
+
+    25%{
+        background:rgba(18,25,41,.35);
+    }
+
+    50%{
+        background:rgba(18,25,41,.55);
+    }
+
+    75%{
+        background:rgba(18,25,41,.35);
+    }
+
+    100%{
+        background:rgba(18,25,41,0);
+    }
+
+}

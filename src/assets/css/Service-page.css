@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 .header-wrap {
     background-image: linear-gradient(#1219297d), url('images/projenius-banner.webp');
 }
@@ -1376,10 +1377,12 @@
 .internship-domain-card h3,
 .internship-project-card h3,
 .internship-roadmap-card h3 {
-  color: #07142f;
+  font-family: "Poppins", sans-serif;
+  color:  #002654;
   font-size: 20px;
-  font-weight: 800;
-  line-height: 1.35;
+  font-weight: 600;   /* was 800 */
+  letter-spacing: -0.5px;
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -2377,4 +2380,12 @@
   .glass-panel {
     padding: 32px !important;
   }
+}
+
+
+/* Technology Track Font */
+
+.internship-tech-section,
+.internship-tech-section * {
+    font-family: 'Outfit', sans-serif;
 }

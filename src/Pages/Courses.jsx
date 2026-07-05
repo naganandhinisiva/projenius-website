@@ -1,3 +1,8 @@
+import "swiper/css/effect-fade";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
+
+import "swiper/css";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -431,51 +436,117 @@ export default function Courses() {
       </section>
 
       {/* Course Specific Testimonials */}
-      <motion.section 
-        initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeInUp}
-        className="course-testimonials py-5 bg-light"
-      >
+      <motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  variants={fadeInUp}
+  className="course-testimonials py-5"
+  style={{
+    background: "#121929"
+  }}
+>
         <div className="container">
           <div className="section-heading text-center mb-5">
             <span id="sub-heading" className="d-block mb-2" style={{color: '#3da9fc', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase'}}>Student Success</span>
-            <h2 className="fw-bold" style={{color: '#0B1426', fontSize: '2.5rem'}}>What Our Learners Built</h2>
+            <h2
+  className="fw-bold"
+  style={{
+    color: "#ffffff",
+    fontSize: "2.5rem"
+  }}
+>
+  What Our Learners Built
+</h2>
           </div>
-          <div className="row justify-content-center g-4">
-            {testimonials.map((t, idx) => (
-              <div className="col-lg-6 col-md-12" key={idx}>
-                <div className="card border-0 shadow-sm h-100 p-0 overflow-hidden bg-white" style={{borderRadius: '16px'}}>
-                  <div className="row g-0 h-100">
-                    <div className="col-sm-5 position-relative">
-                       <img src={t.projectImage} className="w-100 h-100" style={{objectFit: 'cover', minHeight: '200px'}} alt="Student Project" />
-                       <div className="position-absolute top-0 end-0 p-2">
-                         <a href={t.projectLink} className="btn btn-sm btn-light rounded-pill shadow-sm py-1 px-3 d-flex align-items-center" style={{fontSize: '12px', fontWeight: '600'}}>
-                           <i className="bi bi-link-45deg me-1 fs-6"></i> View Project
-                         </a>
-                       </div>
-                    </div>
-                    <div className="col-sm-7 p-4 d-flex flex-column">
-                      <div className="d-flex mb-2">
-                        <i className="bi bi-star-fill text-warning me-1"></i>
-                        <i className="bi bi-star-fill text-warning me-1"></i>
-                        <i className="bi bi-star-fill text-warning me-1"></i>
-                        <i className="bi bi-star-fill text-warning me-1"></i>
-                        <i className="bi bi-star-fill text-warning"></i>
-                      </div>
-                      <p className="fst-italic mb-4 flex-grow-1" style={{color: '#475569', fontSize: '14px', lineHeight: '1.6'}}>"{t.quote}"</p>
-                      <div className="d-flex align-items-center mt-auto">
-                        <div className="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center fw-bold" style={{width: '40px', height: '40px'}}>{t.name.charAt(0)}</div>
-                        <div className="ms-3">
-                          <h6 className="mb-0 fw-bold" style={{color: '#0B1426'}}>{t.name}</h6>
-                          <small className="text-muted">{t.role}</small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <Swiper
+  modules={[Autoplay, EffectFade]}
+  effect="fade"
+  speed={1200}
+  slidesPerView={1}
+  loop={true}
+  autoplay={{
+    delay: 5000,
+    disableOnInteraction: false,
+  }}
+>
+
+  {testimonials.map((t, idx) => (
+
+    <SwiperSlide key={idx}>
+
+      <div
+        className="card border-0 shadow-sm overflow-hidden bg-white"
+        style={{
+          borderRadius: "16px",
+          minHeight: "80vh",
+        }}
+      >
+
+        <div className="row g-0 h-100">
+
+          <div
+  className="col-lg-6 position-relative overflow-hidden carousel-image"
+>
+            <img
+              src={t.projectImage}
+              alt="Student Project"
+              className="w-100 h-100"
+              style={{
+                objectFit: "cover",
+                minHeight: "80vh",
+              }}
+            />
+            <div className="carousel-overlay swiper-overlay"></div>
           </div>
+
+          <div className="col-lg-6 p-5 d-flex flex-column justify-content-center">
+
+            <div className="d-flex mb-3">
+              <i className="bi bi-star-fill text-warning me-1"></i>
+              <i className="bi bi-star-fill text-warning me-1"></i>
+              <i className="bi bi-star-fill text-warning me-1"></i>
+              <i className="bi bi-star-fill text-warning me-1"></i>
+              <i className="bi bi-star-fill text-warning"></i>
+            </div>
+
+            <p
+              className="fst-italic"
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.8",
+              }}
+            >
+              "{t.quote}"
+            </p>
+
+            <h4 className="mt-4 mb-1">
+              {t.name}
+            </h4>
+
+            <p className="text-muted">
+              {t.role}
+            </p>
+
+            <a
+              href={t.projectLink}
+              className="btn btn-primary mt-3"
+            >
+              View Project
+            </a>
+
+          </div>
+
         </div>
+
+      </div>
+
+    </SwiperSlide>
+
+  ))}
+
+</Swiper>
+          </div>
       </motion.section>
 
       {/* FAQ SECTION (Grid Style) */}

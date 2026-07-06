@@ -69,11 +69,27 @@
 }
 
 .contact-card .card-content h3{
-    color:#fff;
+
     font-size:58px;
     line-height:1.1;
-    font-weight:700;
+    font-weight:800;
     margin-bottom:25px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #d9f7ff 25%,
+        #66C7DD 60%,
+        #00BFFF 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    display:inline-block;
+
+    text-shadow: 0 2px 18px rgba(102,199,221,0.35);
 }
 
 /* BUTTON */
@@ -150,11 +166,30 @@
 }
 
 .counter-box h2{
-    color:#fff;
-    font-size:72px;
-    font-weight:700;
-    margin-bottom:10px;
-    position:relative;
+    color: #ffffff;
+    font-size: 82px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter-box h2 span{
+    font-size: 82px !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.counter-box h2 span{
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
 }
 
 .counter-box p{

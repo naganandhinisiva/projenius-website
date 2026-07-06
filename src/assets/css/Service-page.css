@@ -3,15 +3,48 @@
     background-image: linear-gradient(#1219297d), url('images/projenius-banner.webp');
 }
 
+.header-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    text-align: center;
+}
+
+.title-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-section .page-title{
+    margin: 0 auto;
+}
 .header-wrap {
   background-image: linear-gradient(#1219297d),
     url("images/projenius-banner.webp");
 }
 
 .page-title{
-    font-size: clamp(42px, 5vw, 68px);
-    font-weight: 800;
-    letter-spacing: -1px;
+    margin: 0;
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: center;
+
+    background: linear-gradient(
+        90deg,
+        #e7e7ea 0%,
+        #408eb1 35%,
+        #0db6dc 70%,
+        #3DB8D4 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 /* =========================================
    COURSE SECTION
@@ -108,9 +141,16 @@
     font-size: 24px;
   }
 
-  .workshop-title-section {
-    padding-top: 80px;
-  }
+  .workshop-title-section{
+    max-width: 780px;
+    min-height: 620px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-top: 0;
+}
 
   .workshop-event-card,
   .workshop-event-card:nth-child(even) {

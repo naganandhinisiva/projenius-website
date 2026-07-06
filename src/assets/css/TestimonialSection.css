@@ -1,7 +1,7 @@
 .testimonial-section{
     position: relative;
     overflow: hidden;
-    padding-top: 16px;
+    padding: 0;
 }
 
 /* WRAPPER */
@@ -29,12 +29,14 @@
     gap: 12px;
     padding: 8px 24px;
     border-radius: 60px;
-    background: #E8F7FA;
+
+    background: #002D62;
+
     margin-bottom: 30px;
 }
 
-.google-text {
-    color: #4285F4;
+.google-text{
+    color: #ffffff;        /* White */
     font-weight: 700;
     font-size: 16px;
     letter-spacing: -0.5px;
@@ -149,9 +151,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 720px;
 
-    overflow: visible; /* important for head outside circle */
+    min-height: 600px;
+
+    overflow: visible;
 }
 
 /* BIG CIRCLE */
@@ -164,7 +167,7 @@
     background: #E8F7FA;
     border-radius: 50%;
     z-index: 1;
-    bottom: 137px;
+    bottom: 85px;
 }
 
 /* IMAGE */
@@ -179,7 +182,7 @@
 
     object-fit: contain;
 
-    transform: translateY(-30px);
+    transform: translateY(-50px);
 }
 /* QUOTE */
 

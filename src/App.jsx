@@ -74,6 +74,14 @@ const POPUP_CONFIGS = {
 
 export default function App() {
   const location = useLocation();
+  
+  useEffect(() => {
+  if (window.lenis) {
+    window.lenis.scrollTo(0, {
+      immediate: true,
+    });
+  }
+}, [location.pathname]);
   const [activePopup, setActivePopup] = useState(null);
 useEffect(() => {
   const disableRightClick = (e) => {
@@ -89,17 +97,19 @@ useEffect(() => {
   // Initialize Lenis Smooth Scroll
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth Apple-like easing
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    })
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: "vertical",
+  gestureDirection: "vertical",
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+});
 
+// Make Lenis available globally
+window.lenis = lenis;
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)

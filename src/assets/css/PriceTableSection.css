@@ -1,5 +1,5 @@
 .pricing-main-section {
-    padding: 80px 40px;
+    padding: 50px 40px;
     overflow: hidden;
 }
 
@@ -7,7 +7,6 @@
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    height: 100%;
     min-height: 620px;
     background: #0d1122;
 }
@@ -137,13 +136,15 @@
 .package-card {
     background: #071122;
     border-radius: 20px;
-    padding: 35px;
+    padding: 24px;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.08);
 
-    /* Reduced Height */
     min-height: 620px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .package-card::before {
@@ -163,7 +164,7 @@
     display: flex;
     align-items: center;
     gap: 18px;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 }
 
 .thunder-icon {
@@ -188,9 +189,9 @@
 
 .package-text {
     color: #d8d8d8;
-    font-size: 17px;
-    line-height: 30px;
-    margin-bottom: 28px;
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 14px;
 }
 
 .package-list {
@@ -201,11 +202,11 @@
 
 .package-list li {
     color: #fff;
-    font-size: 19px;
-    margin-bottom: 18px;
+    font-size: 16px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
 }
 
 .package-list li i {
@@ -218,7 +219,7 @@
 ========================= */
 
 .price-box {
-    margin-top: 35px;
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -233,7 +234,7 @@
 
 .price {
     color: #fff;
-    font-size: 58px;
+    font-size: 48px;
     font-weight: 700;
 }
 
@@ -260,13 +261,13 @@
 
 .choose-btn {
     width: 100%;
-    margin-top: 30px;
-    height: 65px;
+    margin-top: 15px;
+    height: 50px;
     border: none;
     border-radius: 50px;
-    background: #002D62; /* Dark blue */
+    background: #002D62;
     color: #fff;
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 700;
     transition: 0.4s;
 }

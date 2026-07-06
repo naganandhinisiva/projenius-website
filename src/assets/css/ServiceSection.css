@@ -26,11 +26,22 @@
 
 .svc-sub {
     display: inline-block;
-    font-size: 13px;
+    font-size: 18px;
+    font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #4ecca3;
     margin-bottom: 16px;
+
+    background: linear-gradient(
+        90deg,
+        #2ec3f9,
+        #5B4B8A,
+        #D46A2E
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .svc-title {
@@ -40,14 +51,12 @@
     margin-bottom: 20px;
     color: #fff;
 }
-
 .svc-para {
     color: #aaa;
-    line-height: 1.8;
-    font-size: 15px;
-    margin-bottom: 30px;
+    line-height: 1.9;
+    font-size: 20px;
+    margin-bottom: 35px;
 }
-
 
 /* ══════════════════════
    RIGHT SIDE — SCROLL
@@ -195,7 +204,11 @@
     animation-delay: 0.8s;
 }
 
-.btn {
+.svc-left .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
     animation-delay: 1.1s;
 }
 

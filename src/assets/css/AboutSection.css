@@ -17,7 +17,7 @@
 
 .about-v2 .about-left-main-img {
     position: absolute;
-    top: 0;
+    top: -25px;   /* Move image upward */
     left: 0;
     width: 72%;
     z-index: 1;
@@ -56,8 +56,8 @@
 
 .about-v2 .about-left-bottom {
     position: absolute;
-    left: 80px;
-    top: 380px;
+    left: 120px;   /* Adjust horizontal position */
+    top: 500px;    /* Place below the second image */
     z-index: 3;
     transition: .5s;
 }
@@ -646,4 +646,53 @@
     transform:translateY(-25px) scale(1.08);
 
     filter:drop-shadow(0 0 18px #58d9ff);
+}
+
+.about-v2 #sub-heading{
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+background:linear-gradient(
+        90deg,
+        #01061f,
+        #03023e,
+        #66C7DD,
+        #3DB8D4
+    );
+
+
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes aboutGradient{
+    from{
+        background-position:200%;
+    }
+    to{
+        background-position:-200%;
+    }
+}   
+
+#sub-heading{
+    font-size: 34px;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        90deg,
+        #01061f 0%,
+        #03023e 35%,
+        #66C7DD 70%,
+        #3DB8D4 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }

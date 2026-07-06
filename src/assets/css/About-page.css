@@ -130,10 +130,25 @@
 
 .about-hero-content .page-title {
     margin: 0;
-    color: #ffffff;
-    font-size: clamp(44px, 6vw, 76px);
-    line-height: 1.08;
-    text-shadow: 0 10px 34px rgba(0, 0, 0, 0.32);
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.1;
+
+     background:linear-gradient(
+        90deg,
+        #e7e8eb,
+        #cdcdd3,
+        #66C7DD,
+        #3DB8D4
+    );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    animation: textShimmer 3.5s linear infinite;
 }
 
 .about-hero-desc {
@@ -360,15 +375,15 @@
 }
 
 .about-1 li.list i {
-    color: #66c7dd;
+    color: #0a1745;
     font-size: 20px;
     margin-top: 3px;
 }
 
 .about-contact-btn {
-    background: #66c7dd;
-    color: #121929;
-    box-shadow: 0 10px 24px rgba(102, 199, 221, 0.28);
+    background: #020b36;
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(0,45,255,.35);
 }
 
 .about-contact-btn:hover {
@@ -454,7 +469,7 @@ padding: 40px;
     max-width: 500px;    /* Maximum width */
     height: 300px;       /* Fixed height */
     margin: 0 auto;      /* Center the image */
-    border-radius: 8px;
+    border-radius: 28px;
     overflow: hidden;
     background: #eef7fa;
     isolation: isolate;
@@ -479,8 +494,23 @@ padding: 40px;
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;    /* Shows full image inside the smaller box */
-    transition: transform 0.45s ease;
+    object-fit: contain;
+    transition: all .45s ease;
+}
+
+.about-3 .why-img-slider:hover img.why-img{
+
+    transform:scale(1.05);
+
+}
+
+.about-3 .why-img-slider:hover{
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.18),
+        0 0 0 4px #66C7DD,
+        0 0 30px rgba(102,199,221,.35);
+
 }
 
 .about-3 .why-img-1 {
@@ -1435,6 +1465,7 @@ img {
 
 .about-3 .row {
     align-items: center;
+    padding-left: 35px;
 }
 
 .about-3 .icon-box {
@@ -2262,3 +2293,61 @@ opacity:1;
     }
 }
 
+
+
+@media (max-width: 1366px) {
+    .about-hero-content .page-title {
+        font-size: 46px;
+    }
+}
+
+@media (max-width: 991px) {
+    .about-hero-content .page-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 575px) {
+    .about-hero-content .page-title {
+        font-size: 30px;
+    }
+}
+
+.about-3 .why-img-slider{
+    position: relative;
+    overflow: hidden;
+}
+
+.about-3 .why-img-slider::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        rgba(1,6,31,0.05),
+        rgba(3,2,62,0.10),
+        rgba(102,199,221,0.20),
+        rgba(61,184,212,0.25)
+    );
+
+    opacity: 0;
+    transition: opacity .4s ease;
+
+    z-index: 2;
+}
+
+.about-3 .why-img-slider:hover::before{
+    opacity: 1;
+}
+
+.about-3 .why-img-slider:hover img.why-img{
+
+    transform: scale(1.05);
+
+    filter:
+        brightness(1.05)
+        contrast(1.08)
+        saturate(1.15);
+
+}

@@ -90,19 +90,20 @@ export default function ContactSection() {
                 <div className="container">
                     <div className="counter-wrapper">
                         <div className="counter-box" data-aos="fade-right" data-aos-delay="150">
-                            <h2><CountUp to={156} suffix="k" /></h2>
+                            <CountUp to={156} duration={2.5} suffix="k" />
                             <p>PROJECT COMPLETE</p>
                         </div>
                         <div className="counter-box" data-aos="fade-down" data-aos-delay="300">
-                            <h2><CountUp to={556} suffix="k" /></h2>
+                            <CountUp to={556} duration={3} suffix="k" />
                             <p>CLIENTS SATISFACTIONS</p>
                         </div>
                         <div className="counter-box" data-aos="fade-up" data-aos-delay="450">
-                            <h2><CountUp to={234} suffix="k" /></h2>
+                            
+<CountUp to={234} duration={2.8} suffix="k" />
                             <p>ENVATO MARKET</p>
                         </div>
                         <div className="counter-box" data-aos="fade-left" data-aos-delay="600">
-                            <h2><CountUp to={348} suffix="k" /></h2>
+                            <CountUp to={348} duration={3.2} suffix="k" />
                             <p>MOBILE APPS</p>
                         </div>
                     </div>

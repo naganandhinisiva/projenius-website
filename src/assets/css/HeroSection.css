@@ -74,6 +74,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
+    padding-top: 45px;   /* NEW */
     padding-bottom: 0;
 }
 
@@ -203,7 +204,7 @@
     flex-direction: column;
     gap: 30px;
     align-items: center;
-    margin-top: 0; /* Added top margin to clear navbar spacing for top thumbnail */
+    margin-top: 55px;
 }
 
 .hero .thumb-img {

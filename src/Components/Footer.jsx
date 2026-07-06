@@ -53,7 +53,7 @@ export default function Footer() {
                             </div>
                             <div>
                                 <div className="footer-small-title">Give us a call</div>
-                                <div className="footer-phone">+91 90254 76322</div>
+                                <div className="footer-phone">+91 89254 50473</div>
                             </div>
                         </div>
 
@@ -85,29 +85,65 @@ export default function Footer() {
                         {/* BRAND */}
                         <div className="footer-col brand-col">
                             <div className="footer-logo-wrap">
-                                <img
-                                    src="images/projenius-logo.webp"
-                                    alt="ProJenius"
-                                    className="footer-logo"
-                                />
-                            </div>
+    <img
+        src="images/projenius-logo.webp"
+        alt="ProJenius"
+        className="footer-logo"
+    />
+</div>
+
+<p className="footer-company-name">
+    Innovation Technology Private Limited
+</p>
                             <p className="footer-description">
                                 Improve efficiency and provide a better customer experience with modern technology services tailored for your success.
                             </p>
                             <div className="footer-socials">
-                                <a href="https://wa.me/919025476322?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services" target="_blank" rel="noreferrer" className="footer-social whatsapp">
-                                    <i className="bi bi-whatsapp"></i>
-                                </a>
-                                <a href="https://instagram.com/projenius_" target="_blank" rel="noreferrer" className="footer-social instagram">
-                                    <i className="bi bi-instagram"></i>
-                                </a>
-                                <a href="https://www.facebook.com/profile.php?id=61560720950335&sk=followers" target="_blank" rel="noreferrer" className="footer-social facebook">
-                                    <i className="bi bi-facebook"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/projenius-498444374/" target="_blank" rel="noreferrer" className="footer-social linkedin">
-                                    <i className="bi bi-linkedin"></i>
-                                </a>
-                            </div>
+
+    <a
+        href="mailto:teamprojenius2025@gmail.com"
+        className="footer-social email"
+    >
+        <i className="bi bi-envelope-fill"></i>
+    </a>
+
+    <a
+        href="https://wa.me/918925450473?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
+        target="_blank"
+        rel="noreferrer"
+        className="footer-social whatsapp"
+    >
+        <i className="bi bi-whatsapp"></i>
+    </a>
+
+    <a
+        href="https://instagram.com/projenius_"
+        target="_blank"
+        rel="noreferrer"
+        className="footer-social instagram"
+    >
+        <i className="bi bi-instagram"></i>
+    </a>
+
+    <a
+        href="https://www.linkedin.com/in/projenius-498444374/"
+        target="_blank"
+        rel="noreferrer"
+        className="footer-social linkedin"
+    >
+        <i className="bi bi-linkedin"></i>
+    </a>
+
+    <a
+        href="https://www.facebook.com/profile.php?id=61560720950335&sk=followers"
+        target="_blank"
+        rel="noreferrer"
+        className="footer-social facebook"
+    >
+        <i className="bi bi-facebook"></i>
+    </a>
+
+</div>
                         </div>
 
                         {/* QUICK LINKS */}
@@ -149,7 +185,7 @@ export default function Footer() {
                                         <i className="bi bi-telephone-fill"></i>
                                     </div>
                                     <div className="footer-contact-text">
-                                        <a href="tel:+91 90254 76322">+91 90254 76322</a>
+                                        <a href="tel:+918925450473">+91 89254 50473</a>
                                     </div>
                                 </div>
                             </div>
@@ -189,8 +225,8 @@ export default function Footer() {
                     {/* BOTTOM BAR */}
                     <div className="footer-bottom">
                         <div className="footer-copy">
-                            © Copyright 2026 ProJenius. All rights reserved.
-                        </div>
+    © Copyright 2026 ProJenius Innovation Technology Private Limited. All rights reserved.
+</div>
                         <div className="footer-bottom-links">
                             <Link to="/privacy-policy">Privacy Policy</Link>
                             <Link to="/terms-conditions">Terms & Conditions</Link>

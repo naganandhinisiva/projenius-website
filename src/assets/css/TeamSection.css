@@ -8,19 +8,31 @@
 }
 
 /* ── Header ──────────────────────────────────────────── */
-.team-section-header {
-    text-align: center;
-    margin-bottom: 64px;
+.team-section-header{
+    text-align:center;
+    margin-bottom:35px;
 }
 
-.team-sub-heading {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #2563eb;
-    margin-bottom: 12px;
+.team-sub-heading{
+    display:inline-block;
+
+    font-size:34px;
+    font-weight:900;
+    text-transform:uppercase;
+
+    background:linear-gradient(
+        90deg,
+        #01061f 0%,
+        #03023e 35%,
+        #66C7DD 70%,
+        #3DB8D4 100%
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+
+    margin-bottom:18px;
 }
 
 .team-section-title {
@@ -31,16 +43,30 @@
     margin-bottom: 14px;
 }
 
-.team-title-highlight {
-    color: #49cbe4;
+.team-title-highlight{
+
+    background:linear-gradient(
+        90deg,
+        #8B1CFB 0%,
+        #B5179E 40%,
+        #F72585 75%,
+        #FF4D6D 100%
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
 }
 
-.team-section-desc {
-    font-size: 1rem;
-    color: #555;
-    max-width: 580px;
-    margin: 0 auto;
-    line-height: 1.7;
+.team-section-desc{
+    font-size:20px;
+    color:#555;
+
+    max-width:950px;
+
+    margin:15px auto 0;
+
+    line-height:1.8;
 }
 
 /* ── Grids ───────────────────────────────────────────── */
@@ -106,18 +132,18 @@
 }
 
 .team-member-role {
-    font-size: 0.72rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #6b7280;
-    margin: 0 0 14px;
+    letter-spacing: 0.08em;
+    color: #16367a;
+    margin: 0 0 16px;
 }
 
 .team-member-bio {
-    font-size: 0.88rem;
+    font-size: 1.05rem;
     color: #4b5563;
-    line-height: 1.7;
+    line-height: 1.8;
     margin: 0;
 }
 
@@ -337,7 +363,7 @@
 }
 
 .team-card:hover .team-member-role{
-    color:#2563EB;
+    color:#16367a;
 }
 
 .team-card:hover .team-member-bio{

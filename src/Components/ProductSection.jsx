@@ -19,17 +19,7 @@ const tabsData = [
       "https://images.unsplash.com/photo-1677442136019-21780ecad995",
     description:
       "Smart AI-powered systems for automation and business growth.",
-  },  
-  {
-   /* 
-    title: "EduTech Platform",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    description:
-     "Modern responsive websites with premium UI and smooth performance.",
-     */
-  },
-  
+  }
 ];
   
 

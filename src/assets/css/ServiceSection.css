@@ -32,12 +32,26 @@
     text-transform: uppercase;
     margin-bottom: 16px;
 
+    .svc-sub {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+
     background: linear-gradient(
         90deg,
-        #2ec3f9,
-        #5B4B8A,
-        #D46A2E
+        #2ec3f9 0%,
+        #5B4B8A 50%,
+        #D46A2E 100%
     );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -69,10 +83,22 @@
 .svc-card {
     height: 420px;
     margin-bottom: 100px;
-    border-radius: 20px;
-    overflow: hidden;
+
     position: sticky;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+    background: #ffffff;
+
+    border: 3px solid rgba(102,199,221,.3);
+
+    border-radius: 24px;
+
+    padding: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 15px rgba(102,199,221,.15),
+        inset 0 0 15px rgba(102,199,221,.08);
 }
 
 /* Each card stacks with z-index and slight top offset */
@@ -101,7 +127,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+
+    border-radius: 16px;
+
     display: block;
+
+    transition: transform .8s ease;
 }
 
 /* ── DARK OVERLAY ── */
@@ -158,6 +190,12 @@
 /* floating hover effect */
 .svc-card:hover {
     transform: translateY(-12px) scale(1.02);
+
+    border-color:#66C7DD;
+
+    box-shadow:
+        0 0 18px rgba(102,199,221,.45),
+        0 0 35px rgba(102,199,221,.25);
 }
 
 /* image zoom */
@@ -182,13 +220,25 @@
    HEADING ANIMATION
 ========================= */
 
-.svc-sub,
-.svc-title,
-.svc-para,
-.btn {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeUp 0.8s ease forwards;
+.svc-sub {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+
+    background-image: linear-gradient(
+        90deg,
+        #2ec3f9 0%,
+        #5B4B8A 50%,
+        #D46A2E 100%
+    ) !important;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 /* delay for premium stagger effect */
@@ -375,4 +425,44 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.svc-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:24px;
+    padding:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #66C7DD,
+        transparent
+    );
+
+    background-size:300% 100%;
+
+    opacity:0;
+
+    transition:.3s;
+
+    pointer-events:none;
+}
+
+.svc-card:hover::before{
+    opacity:1;
+    animation:svcBorderMove 1.5s linear infinite;
+}
+
+@keyframes svcBorderMove{
+
+    from{
+        background-position:0%;
+    }
+
+    to{
+        background-position:300%;
+    }
+
 }

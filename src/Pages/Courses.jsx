@@ -448,7 +448,9 @@ export default function Courses() {
 >
         <div className="container">
           <div className="section-heading text-center mb-5">
-            <span id="sub-heading" className="d-block mb-2" style={{color: '#3da9fc', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase'}}>Student Success</span>
+    <span className="student-success-heading">
+  Student Success
+</span>
             <h2
   className="fw-bold"
   style={{

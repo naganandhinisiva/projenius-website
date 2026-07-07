@@ -120,10 +120,16 @@ const technologies = [
   { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
   { name: "React JS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
   { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "Express.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+ {
+  name: "Express.js",
+  logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg"
+},
   { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
   { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-  { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+  {
+  name: "GitHub",
+  logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"
+},
   { name: "Postman", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
 ];
 
@@ -289,24 +295,37 @@ export default function Internship() {
                   >
                     <div className="card-bg-gradient"></div>
                     <div className="card-content-relative">
-                      <div className={`card-icon-wrapper ${
-                        index === 0 ? "color-blue" : 
-                        index === 1 ? "color-purple" : 
-                        index === 2 ? "color-pink" : 
-                        "color-orange"
-                      }`}>
-                        <img 
-                          src={`/images/icon-${index + 1}.png`} 
-                          alt={title} 
-                          className="detail-icon-img" 
-                          style={{ width: "32px", height: "32px", objectFit: "contain" }} 
-                        />
-                      </div>
-                      <div className="card-text">
-                        <h4>{title}</h4>
-                        <span>{desc}</span>
-                      </div>
-                    </div>
+
+    <div className="card-text">
+        <h4>{title}</h4>
+        <span>{desc}</span>
+    </div>
+
+    <div
+        className={`card-icon-wrapper ${
+            index === 0
+                ? "color-blue"
+                : index === 1
+                ? "color-purple"
+                : index === 2
+                ? "color-pink"
+                : "color-orange"
+        }`}
+    >
+        <i
+  className={`bi ${
+    index === 0
+      ? "bi-clock-history"
+      : index === 1
+      ? "bi-laptop"
+      : index === 2
+      ? "bi-award"
+      : "bi-person-check"
+  } detail-icon`}
+></i>
+    </div>
+
+</div>
                   </motion.div>
                 );
               })}
@@ -327,8 +346,7 @@ export default function Internship() {
             <div className="showcase-video-glow"></div>
             <div className="showcase-video-inner">
               <iframe
-                width="100%"
-                height="100%"
+                
                 src="https://www.youtube.com/embed/1adzVmNh078?si=dCnd1I_Mky0IN98m"
                 title="YouTube video player"
                 frameBorder="0"

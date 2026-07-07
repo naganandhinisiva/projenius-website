@@ -93,11 +93,27 @@
 }
 
 
-
 .pricing-overlay-content .small-text {
-    color: #fff;
+    display: inline-block;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #2ec3f9,
+        #5B4B8A,
+        #D46A2E
+    );
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    animation: pricingGradient 4s linear infinite;
 }
 
 .pricing-overlay-content h1 {
@@ -411,4 +427,33 @@
     .choose-btn {
         font-size: 17px;
     }
+}
+
+@keyframes pricingGradient {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.pricing-subheading{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        90deg,
+        #2ec3f9,
+        #5B4B8A,
+        #D46A2E
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }

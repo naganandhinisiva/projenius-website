@@ -696,3 +696,22 @@ background:linear-gradient(
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+.awards-section #sub-heading{
+    display: inline;
+
+    background-image: linear-gradient(
+        90deg,
+        #2ec3f9,
+        #5B4B8A,
+        #D46A2E
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    background-color: transparent;
+}

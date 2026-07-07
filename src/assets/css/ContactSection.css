@@ -25,6 +25,26 @@
     color:#fff;
 }
 
+.contact-section .heading #sub-heading{
+    display:inline-block;
+    font-size:34px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:16px;
+
+    background: linear-gradient(
+        90deg,
+        #2ec3f9,
+        #5B4B8A,
+        #D46A2E
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
+}
 /* =========================
    IMAGE CARD
 ========================= */

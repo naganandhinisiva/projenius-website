@@ -117,9 +117,12 @@ export default function ProjectSection() {
               <div className="nv-work-card">
                 <div className="nv-flip-box">
                   {/* FRONT */}
-                  <div className="nv-flip-front">
-                    <img src={item.image} alt={item.title} />
-                  </div>
+<div className="nv-flip-front">
+  <img
+    src={item.image}
+    alt={item.title}
+  />
+</div>
 
                   {/* BACK */}
                   <div className="nv-flip-back">

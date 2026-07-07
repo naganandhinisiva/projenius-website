@@ -114,6 +114,8 @@
   transition: box-shadow 0.4s ease;
 }
 
+
+
 /* BACK CARD BORDER */
 .nv-flip-back {
   border: 3px solid rgba(102, 199, 221, 0.3);
@@ -134,19 +136,23 @@
     inset 0 0 20px rgba(0, 191, 255, 0.3);
 }
 
-/* FRONT IMAGE */
-.nv-flip-front {
-  background: #000;
+/* FRONT CARD */
+.nv-flip-front{
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+
+    background: #ffffff;
+    border: 3px solid rgba(102,199,221,.3);
+    padding: 15px;
+
+    box-shadow:
+        0 0 15px rgba(102,199,221,.15),
+        inset 0 0 15px rgba(102,199,221,.08);
+
+    animation: glowPulse 3s ease-in-out infinite;
 }
 
-.nv-flip-front img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  display: block;
-  transform: scale(1.8);
-}
 
 /* BACK SIDE */
 .nv-flip-back {
@@ -443,19 +449,18 @@
    IMAGE HOVER EFFECT
 ================================ */
 
-.nv-flip-front {
-    overflow: hidden;
-    border-radius: 28px;
+
+
+.nv-flip-front img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    border-radius:18px;
+    display:block;
+    transition:transform .6s ease, filter .6s ease;
 }
 
-.nv-flip-front img {
-    transition: transform 0.6s ease, filter 0.6s ease;
-}
-
-.nv-work-card:hover .nv-flip-front img {
-    transform: scale(1.08);
-    filter: brightness(1.08);
-}
 
 .nv-work-card:hover .nv-flip-front {
     box-shadow:
@@ -466,10 +471,7 @@
     border: 2px solid #66C7DD;
 }
 
-.nv-flip-front {
-    position: relative;
-    overflow: hidden;
-}
+
 
 .nv-flip-front::before {
     content: "";
@@ -557,3 +559,4 @@
     }
 
 }
+

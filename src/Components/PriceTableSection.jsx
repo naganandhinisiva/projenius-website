@@ -92,7 +92,9 @@ const PricingSection = () => {
 
               {/* Text content */}
               <div className="pricing-overlay-content">
-                <span id="sub-heading" className="text-white">Join With Us</span>
+                <span id="sub-heading" className="pricing-subheading">
+    Join With Us
+</span>
 
                 <h1 id="title">
                   Amazing <br />

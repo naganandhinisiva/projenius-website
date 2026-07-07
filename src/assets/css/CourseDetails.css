@@ -300,3 +300,25 @@
     font-size: 36px;
   }
 }
+#sub-heading.student-success-heading{
+    display:inline-block;
+    margin-bottom:18px;
+
+    font-size:34px;
+    font-weight:900;
+    line-height:1.1;
+    text-transform:uppercase;
+    letter-spacing:1px;
+
+    background: linear-gradient(
+        90deg,
+        #2ec3f9,
+        #5B4B8A,
+        #D46A2E
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    color:transparent !important;
+}

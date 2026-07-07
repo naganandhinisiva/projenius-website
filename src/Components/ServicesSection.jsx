@@ -119,29 +119,42 @@ export default function ServicesSection() {
                 <div className="svc-right">
                     {services.map((service, index) => (
                         <div
-                            key={index}
-                            className={`svc-card svc-card-${index + 1}`}
-                            ref={(el) => (cardRefs.current[index] = el)}
-                            data-index={index}
-                        >
-                            <img
-                                src={service.image}
-                                alt={service.title}
-                                className="svc-img"
-                            />
+    key={index}
+    className={`svc-card svc-card-${index + 1}`}
+    ref={(el) => (cardRefs.current[index] = el)}
+    data-index={index}
+>
+    <div className="svc-flip-box">
 
-                            <div className="svc-overlay" />
+        {/* FRONT */}
+        <div className="svc-flip-front">
+            <img
+                src={service.image}
+                alt={service.title}
+                className="svc-img"
+            />
+            <div className="svc-overlay"></div>
+        </div>
 
-                            <div className="svc-content">
-                                <h3 className="svc-card-title">
-                                    {service.title}
-                                </h3>
+        {/* BACK */}
+        <div className="svc-flip-back">
 
-                                <a href={service.link} className="svc-read-more">
-                                    Read More →
-                                </a>
-                            </div>
-                        </div>
+            <h3 className="svc-card-title">
+                {service.title}
+            </h3>
+
+            <p className="svc-card-desc">
+                Innovative digital solutions tailored to modern business needs with cutting-edge technologies.
+            </p>
+
+            <a href={service.link} className="svc-read-more">
+                Read More →
+            </a>
+
+        </div>
+
+    </div>
+</div>
                     ))}
                 </div>
 

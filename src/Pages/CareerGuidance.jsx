@@ -1,3 +1,4 @@
+import { useInView } from "framer-motion";
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import gsap from "gsap";
@@ -10,6 +11,8 @@ import "../index.css";
 import "../assets/css/Service-page.css";
 import "../assets/css/CareerGuidance.css";
 import CountUp from "../Components/CountUp";
+
+
 
 const guidanceCards = [
   {
@@ -108,6 +111,12 @@ const successStories = [
 ];
 
 export default function CareerGuidance() {
+  const statsRef = useRef(null);
+
+const statsInView = useInView(statsRef, {
+  amount: 0.4,
+  once: false,
+});
   const [showFaq, setShowFaq] = useState(false);
   const [activeFaq, setActiveFaq] = useState(null);
   const [activeStep, setActiveStep] = useState(null);
@@ -333,7 +342,13 @@ Please confirm my booking.
                     <div className="small fw-bold text-muted">- [TODO: Name]</div>
                   </div>
 
-                  <a href="#" onClick={handleBookingClick} className="btn btn-primary-custom btn-lg w-100 shadow-sm" style={{ backgroundColor: '#0ea5e9', borderColor: '#0ea5e9' }}>Book Your Session &rarr;</a>
+                  <a
+  href="#"
+  onClick={handleBookingClick}
+  className="btn bc-book-btn btn-lg w-100"
+>
+  Book Your Session →
+</a>
                 </div>
               </div>
             </div>
@@ -669,21 +684,49 @@ Please confirm my booking.
             <h2 id="title">Real Impact on Careers</h2>
           </div>
 
-          <div className="cg-stats-strip row g-4 text-center" data-aos="zoom-in">
+          <div
+  ref={statsRef}
+  className="cg-stats-strip row g-4 text-center"
+  data-aos="zoom-in"
+>
             <div className="col-lg-3 col-md-6 col-6">
-              <h3 className="stat-number"><CountUp to={500} suffix="+" /></h3>
+              <h3 className="stat-number">{statsInView && (
+  <CountUp
+    key={`500-${Date.now()}`}
+    to={500}
+    suffix="+"
+  />
+)}</h3>
               <p className="stat-label">[TODO: Students Mentored]</p>
             </div>
             <div className="col-lg-3 col-md-6 col-6">
-              <h3 className="stat-number"><CountUp to={45} suffix=" Days" /></h3>
+              <h3 className="stat-number">{statsInView && (
+  <CountUp
+    key={`45-${Date.now()}`}
+    to={45}
+    suffix=" Days"
+  />
+)}</h3>
               <p className="stat-label">[TODO: Avg Time to Placement]</p>
             </div>
             <div className="col-lg-3 col-md-6 col-6">
-              <h3 className="stat-number"><CountUp to={30} suffix="+" /></h3>
+              <h3 className="stat-number">{statsInView && (
+  <CountUp
+    key={`30-${Date.now()}`}
+    to={30}
+    suffix="+"
+  />
+)}</h3>
               <p className="stat-label">[TODO: Hiring Partners]</p>
             </div>
             <div className="col-lg-3 col-md-6 col-6">
-              <h3 className="stat-number"><CountUp to={98} suffix="%" /></h3>
+              <h3 className="stat-number">{statsInView && (
+  <CountUp
+    key={`98-${Date.now()}`}
+    to={98}
+    suffix="%"
+  />
+)}</h3>
               <p className="stat-label">[TODO: Satisfaction Rate]</p>
             </div>
           </div>
@@ -739,3 +782,6 @@ Please confirm my booking.
     </>
   );
 }
+<h2 id="title" className="gradient-title">
+  TANGIBLE OUTCOMES
+</h2>

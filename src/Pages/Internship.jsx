@@ -137,6 +137,11 @@ const successStories = [
   { text: "Intern Testimonials", icon: "bi-chat-quote-fill", color: "blue" },
   { text: "Student Reviews", icon: "bi-star-fill", color: "yellow" },
   { text: "Placement Achievements", icon: "bi-trophy-fill", color: "purple" },
+   {
+    text: "Industry Recognition",
+    icon: "bi-award-fill",
+    color: "green",
+  },
 ];
 
 const stats = [
@@ -172,46 +177,52 @@ export default function Internship() {
     setSelectedDomain(nextDomains[0]);
   };
 
-  useEffect(() => {
-    const statsSection = statsRef.current;
+useEffect(() => {
+  const section = statsRef.current;
+  if (!section) return;
 
-    if (!statsSection) return undefined;
+  let animationFrame;
 
-    const runCounters = () => {
-      const duration = 1600;
-      const startedAt = performance.now();
+  const animateCounter = () => {
+    const duration = 1500;
+    const start = performance.now();
 
-      const tick = (now) => {
-        const progress = Math.min((now - startedAt) / duration, 1);
-        const easedProgress = 1 - Math.pow(1 - progress, 3);
+    const update = (time) => {
+      const progress = Math.min((time - start) / duration, 1);
 
-        setStatCounts(
-          stats.map((stat) => Math.round(stat.end * easedProgress))
-        );
+      setStatCounts(
+        stats.map((stat) =>
+          Math.floor(stat.end * (1 - Math.pow(1 - progress, 3)))
+        )
+      );
 
-        if (progress < 1) {
-          requestAnimationFrame(tick);
-        }
-      };
-
-      requestAnimationFrame(tick);
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(update);
+      }
     };
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          runCounters();
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.35 }
-    );
+    animationFrame = requestAnimationFrame(update);
+  };
 
-    observer.observe(statsSection);
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setStatCounts(stats.map(() => 0)); // Reset
+        animateCounter();
+      }
+    },
+    {
+      threshold: 0.35,
+    }
+  );
 
-    return () => observer.disconnect();
-  }, []);
+  observer.observe(section);
 
+  return () => {
+    observer.disconnect();
+    cancelAnimationFrame(animationFrame);
+  };
+}, []);
 
   return (
     <>

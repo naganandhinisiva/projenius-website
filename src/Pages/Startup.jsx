@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../assets/css/Startup.css";
 
 export default function Startup() {
+const processBackgrounds = [
+  "/images/startup-bg-1.webp",
+  "/images/startup-bg-2.webp",
+  "/images/startup-bg-3.webp",
+];
 
+const [bgIndex, setBgIndex] = useState(0);
+
+const [openFAQ, setOpenFAQ] = useState(null);
+
+const toggleFAQ = (id) => {
+  setOpenFAQ(openFAQ === id ? null : id);
+};
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setBgIndex((prev) => (prev + 1) % processBackgrounds.length);
+  }, 4000);
+
+  return () => clearInterval(interval);
+}, []);
   const services = [
     {
       icon: "bi-cpu",
@@ -352,7 +372,16 @@ export default function Startup() {
       <section className="startup-process-section">
 
         {/* BACKGROUND IMAGE */}
-        <div className="startup-process-bg">
+        <div
+  className="startup-process-bg"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(7,16,32,.70), rgba(7,16,32,.70)),
+      url(${processBackgrounds[bgIndex]})
+    `,
+    transition: "background-image 1s ease-in-out",
+  }}
+>
 
           {/* OVERLAY BOX */}
           <div className="container">
@@ -746,21 +775,20 @@ export default function Startup() {
                     <h2 className="accordion-header">
 
                       <button
-                        className="accordion-button"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#faq1"
-                      >
-                        How long does MVP development take?
-                      </button>
+  className={`accordion-button ${openFAQ === 1 ? "" : "collapsed"}`}
+  type="button"
+  onClick={() => toggleFAQ(1)}
+>
+  How long does MVP development take?
+</button>
 
                     </h2>
 
                     <div
-                      id="faq1"
-                      className="accordion-collapse collapse show"
-                      data-bs-parent="#startupAccordion"
-                    >
+  className={`accordion-collapse collapse ${
+    openFAQ === 1 ? "show" : ""
+  }`}
+>
 
                       <div className="accordion-body">
 
@@ -780,21 +808,20 @@ export default function Startup() {
                     <h2 className="accordion-header">
 
                       <button
-                        className="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#faq2"
-                      >
+  className={`accordion-button ${openFAQ === 2 ? "" : "collapsed"}`}
+  type="button"
+  onClick={() => toggleFAQ(2)}
+>
                         Do you provide post-launch support?
                       </button>
 
                     </h2>
 
                     <div
-                      id="faq2"
-                      className="accordion-collapse collapse"
-                      data-bs-parent="#startupAccordion"
-                    >
+  className={`accordion-collapse collapse ${
+    openFAQ === 2 ? "show" : ""
+  }`}
+>
 
                       <div className="accordion-body">
 
@@ -813,21 +840,21 @@ export default function Startup() {
                     <h2 className="accordion-header">
 
                       <button
-                        className="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#faq3"
-                      >
-                        Can you help with UI/UX design?
-                      </button>
+  className={`accordion-button ${openFAQ === 3 ? "" : "collapsed"}`}
+  type="button"
+  onClick={() => toggleFAQ(3)}
+>
+  Can you help with UI/UX design?
+</button>
 
                     </h2>
 
-                    <div
-                      id="faq3"
-                      className="accordion-collapse collapse"
-                      data-bs-parent="#startupAccordion"
-                    >
+                <div
+  className={`accordion-collapse collapse ${
+    openFAQ === 3 ? "show" : ""
+  }`}
+>
+                   
 
                       <div className="accordion-body">
 
@@ -840,27 +867,53 @@ export default function Startup() {
 
                   </div>
 
+                  <div className="accordion-item">
+
+  <h2 className="accordion-header">
+
+    <button
+  className={`accordion-button ${openFAQ === 5 ? "" : "collapsed"}`}
+  type="button"
+  onClick={() => toggleFAQ(5)}
+>
+   Can ProJenius support startups after product launch?
+</button>
+  </h2>
+
+ <div
+  className={`accordion-collapse collapse ${
+    openFAQ === 5 ? "show" : ""
+  }`}
+>
+    <div className="accordion-body">
+
+      Yes. We provide maintenance, feature upgrades, cloud support, security updates, performance optimization, and long-term technical assistance to help startups grow successfully.
+
+    </div>
+
+  </div>
+
+</div>
+
                   {/* ITEM */}
                   <div className="accordion-item">
 
                     <h2 className="accordion-header">
 
-                      <button
-                        className="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#faq4"
-                      >
-                        Do you work with early-stage startups?
-                      </button>
-
+                   <button
+  className={`accordion-button ${openFAQ === 4 ? "" : "collapsed"}`}
+  type="button"
+  onClick={() => toggleFAQ(4)}
+>
+  Do you work with early-stage startups?
+</button>
                     </h2>
 
                     <div
-                      id="faq4"
-                      className="accordion-collapse collapse"
-                      data-bs-parent="#startupAccordion"
-                    >
+  className={`accordion-collapse collapse ${
+    openFAQ === 4 ? "show" : ""
+  }`}
+>
 
                       <div className="accordion-body">
 

@@ -167,7 +167,7 @@ export default function Workshop() {
                 decoding="async"
               />
             </div>
-          </div>
+          </div>  
         </div>
       </section>
 

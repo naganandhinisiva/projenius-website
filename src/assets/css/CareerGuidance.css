@@ -198,12 +198,11 @@
 }
 
 .stat-number {
-  font-size: 48px;
-  font-weight: 800;
-  color: #facc15; /* Warm amber accent */
-  margin-bottom: 5px;
+    font-size: 48px;
+    font-weight: 800;
+    color: #f59e0b;
+    transition: color 0.3s ease;
 }
-
 .stat-label {
   font-size: 15px;
   font-weight: 500;
@@ -816,8 +815,21 @@ th.col-us {
   background-color: #0f172a;
 }
 
-.cg-dark-theme #sub-heading {
-  color: #38bdf8;
+.cg-dark-theme #sub-heading{
+    background: linear-gradient(
+        90deg,
+        #2ec3f9,
+        #5B4B8A,
+        #D46A2E
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    display: inline-block;
+    font-weight: 800;
 }
 
 .cg-dark-theme #title {
@@ -843,7 +855,24 @@ th.col-us {
 }
 
 .cg-premium-bg #sub-heading {
-  color: #38bdf8;
+    margin: 0;
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.1;
+
+    background: linear-gradient(
+        90deg,
+        #2ec3f9,
+        #5B4B8A,
+        #D46A2E
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    display: inline-block;
 }
 
 .cg-premium-bg #title {
@@ -1407,4 +1436,228 @@ th.col-us {
   flex-direction: column;
   justify-content: center;
   background: #fff;
+}
+
+/* ===== Book Session Button ===== */
+
+.bc-book-btn{
+    width:100%;
+    padding:18px 24px;
+    border:none;
+    border-radius:14px;
+
+    background:linear-gradient(
+        90deg,
+        #0ea5e9,
+        #2563eb,
+        #4f46e5
+    ) !important;
+
+    color:#ffffff !important;
+    font-size:20px;
+    font-weight:700;
+
+    transition:.35s ease;
+    box-shadow:0 12px 30px rgba(14,165,233,.35);
+}
+
+.bc-book-btn:hover{
+    background:linear-gradient(
+        90deg,
+        #0284c7,
+        #1d4ed8,
+        #4338ca
+    ) !important;
+
+    color:#ffffff !important;
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 40px rgba(37,99,235,.45),
+        0 0 20px rgba(79,70,229,.30);
+}
+
+/* Target Audience Cards */
+
+.audience-card{
+    border:2px solid #edf2f7 !important;
+    border-radius:16px;
+    transition:all .35s ease;
+}
+
+.audience-card:hover{
+    transform:translateY(-10px);
+    border-color:#2563eb !important;   /* Blue border */
+    box-shadow:0 18px 35px rgba(37,99,235,.18);
+}
+
+/* Icon animation */
+
+.audience-card:hover .audience-icon-wrapper{
+    transform:scale(1.08);
+}
+
+/* Heading color */
+
+.audience-card:hover h4{
+    color:#2563eb;
+}
+
+/* Description color */
+
+.audience-card:hover p{
+    color:#374151;
+}
+
+/* College Students */
+.col-lg-3:nth-child(1) .audience-card:hover{
+    border-color:#3b82f6 !important;
+}
+
+/* Recent Graduates */
+.col-lg-3:nth-child(2) .audience-card:hover{
+    border-color:#10b981 !important;
+}
+
+/* Career Switchers */
+.col-lg-3:nth-child(3) .audience-card:hover{
+    border-color:#f59e0b !important;
+}
+
+/* Working Professionals */
+.col-lg-3:nth-child(4) .audience-card:hover{
+    border-color:#8b5cf6 !important;
+}
+/* Main Card */
+.audience-card{
+    border:2px solid #edf2f7 !important;
+    border-radius:16px;
+    transition:all .35s ease;
+    overflow:hidden;
+}
+
+.audience-card:hover{
+    transform:translateY(-10px);
+    border-color:#2563eb !important;
+    box-shadow:0 18px 35px rgba(37,99,235,.18);
+}
+
+/* Inside Icon Card */
+.audience-icon-wrapper{
+    transition:all .35s ease;
+}
+
+.audience-card:hover .audience-icon-wrapper{
+    transform:scale(1.12);
+    background:#2563eb !important;
+}
+
+/* Icon */
+.audience-card:hover .audience-icon-wrapper i{
+    color:#fff !important;
+}
+
+/* Heading */
+.audience-card:hover h4{
+    color:#2563eb;
+}
+
+/* Description */
+.audience-card:hover p{
+    color:#374151;
+}
+
+/* Card 1 */
+.col-lg-3:nth-child(1) .audience-card:hover{
+    border-color:#3b82f6 !important;
+}
+.col-lg-3:nth-child(1) .audience-card:hover .audience-icon-wrapper{
+    background:#3b82f6 !important;
+}
+.col-lg-3:nth-child(1) .audience-card:hover .audience-icon-wrapper i{
+    color:#fff !important;
+}
+
+/* Card 2 */
+.col-lg-3:nth-child(2) .audience-card:hover{
+    border-color:#10b981 !important;
+}
+.col-lg-3:nth-child(2) .audience-card:hover .audience-icon-wrapper{
+    background:#10b981 !important;
+}
+.col-lg-3:nth-child(2) .audience-card:hover .audience-icon-wrapper i{
+    color:#fff !important;
+}
+
+/* Card 3 */
+.col-lg-3:nth-child(3) .audience-card:hover{
+    border-color:#f59e0b !important;
+}
+.col-lg-3:nth-child(3) .audience-card:hover .audience-icon-wrapper{
+    background:#f59e0b !important;
+}
+.col-lg-3:nth-child(3) .audience-card:hover .audience-icon-wrapper i{
+    color:#fff !important;
+}
+
+/* Card 4 */
+.col-lg-3:nth-child(4) .audience-card:hover{
+    border-color:#8b5cf6 !important;
+}
+.col-lg-3:nth-child(4) .audience-card:hover .audience-icon-wrapper{
+    background:#8b5cf6 !important;
+}
+.col-lg-3:nth-child(4) .audience-card:hover .audience-icon-wrapper i{
+    color:#fff !important;
+}
+
+.gradient-title{
+    margin: 0;
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.1;
+
+    background: linear-gradient(
+        90deg,
+        #2ec3f9,
+        #5B4B8A,
+        #D46A2E
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Core Services - Blue Gradient */
+.services-section #sub-heading,
+.core-services-section #sub-heading,
+.service-heading #sub-heading {
+    display: inline-block;
+    background: linear-gradient(
+        90deg,
+        #00124f,
+        #1f4fa0,
+        #6fdcff
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.career-guidance-section .section-heading #sub-heading,
+.service-1 .section-heading #sub-heading {
+    display: inline-block !important;
+    background: linear-gradient(
+        90deg,
+        #00124f,
+        #1f4fa0,
+        #6fdcff
+    ) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
 }

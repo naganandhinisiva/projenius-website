@@ -176,17 +176,24 @@
 
 @media (max-width: 767px) {
   .workshop-skill-section {
-    padding: 50px 0;
-  }
+    padding: 90px 0;
+    background: #f4f9ff;   /* Pale light blue */
+    position: relative;
+    overflow: hidden;
+}
 
   .workshop-skill-split {
     gap: 30px;
   }
 
-  .workshop-showcase-section,
-  .workshop-gallery-section {
-    padding: 58px 0;
-  }
+  .workshop-showcase-section{
+    background:
+        radial-gradient(circle at top left,#dbeafe 0%,transparent 45%),
+        radial-gradient(circle at bottom right,#e0f2fe 0%,transparent 40%),
+        #f8fbff;
+
+    padding:90px 0;
+}
 
   .workshop-skill-grid {
     grid-template-columns: 1fr;
@@ -341,9 +348,18 @@
 }
 
 .workshop-skill-section {
-  background: #ffffff;
   padding: 76px 0;
   overflow: hidden;
+  position: relative;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(46,195,249,0.10),
+      transparent 38%),
+    radial-gradient(circle at bottom right,
+      rgba(91,75,138,0.08),
+      transparent 40%),
+    #ddecf7;
 }
 
 .workshop-skill-split {
@@ -1512,8 +1528,39 @@
   top: 110px;
 }
 
-.internship-track-preview #sub-heading {
-  color: #38bdf8;
+.internship-track-preview #sub-heading{
+    margin: 0;
+    display: inline-block;
+
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        90deg,
+        #2ec3f9,
+        #5B4B8A,
+        #D46A2E
+    );
+
+    background-size:200% auto;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+
+    animation:trackGradient 4s linear infinite;
+}
+
+@keyframes trackGradient{
+    0%{
+        background-position:0% center;
+    }
+    100%{
+        background-position:200% center;
+    }
 }
 
 .internship-track-preview > i {
@@ -2999,3 +3046,85 @@
     }
 
 }
+
+
+.internship-stat-card{
+    transition: all .4s ease;
+    border: 2px solid transparent;
+}
+
+.internship-stat-card:hover{
+
+    transform: translateY(-10px);
+
+    border: 2px solid #1d4ed8;   /* Dark Blue */
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #eef5ff
+    );
+
+    box-shadow:
+        0 0 0 2px rgba(29,78,216,.35),
+        0 18px 40px rgba(29,78,216,.28),
+        0 0 35px rgba(59,130,246,.22);
+}
+
+.icon-box{
+
+    width:64px;
+    height:64px;
+}
+
+.icon-box i{
+
+    font-size:30px;
+}
+
+
+
+.internship-stat-card span{
+
+    font-size:20px;
+
+    font-weight:700;
+}
+
+.internship-success-section{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top left,#dceeff 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#ece3ff 0%,transparent 35%),
+    linear-gradient(
+    180deg,
+    #f7fbff,
+    #2e58a7);
+}
+
+.internship-success-section::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background-image:
+
+linear-gradient(rgba(255,255,255,.25) 1px,transparent 1px),
+
+linear-gradient(90deg,rgba(255,255,255,.25) 1px,transparent 1px);
+
+background-size:55px 55px;
+
+opacity:.35;
+
+pointer-events:none;
+
+}
+
